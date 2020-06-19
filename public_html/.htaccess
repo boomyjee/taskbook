@@ -1,0 +1,11 @@
+php_value short_open_tag 1
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME}  -d
+RewriteRule  ^.*$  -  [L]
+
+RewriteCond %{REQUEST_FILENAME}  -f
+RewriteRule  ^.*$  -  [L]
+
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
